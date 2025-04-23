@@ -1,0 +1,152 @@
+section {
+  font-family: 'Arial', sans-serif;
+  padding: 40px;
+}
+h1 {
+  color: #2c3e50;
+  font-size: 2em;
+  border-bottom: 2px solid #3491db;
+  padding-bottom: 10px;
+}
+h2 {
+  color:rgb(60, 108, 143);
+}
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+/* Custom header with logo */
+header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+header img {
+  height: 40px;
+}
+
+/* Custom footer with logo */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px
+}
+footer img {
+  height: 30px
+}
+footer::after {
+  content: url("path/to/small-logo.png");
+  height: 20px;
+}
+/* Text Highlight Colors */
+  .highlight {
+  color: #e74c3c;
+  font-weight: bold;
+  }
+  .highlight-blue {
+  color: #3498db;
+  font-weight: bold;
+  }
+  .highlight-green {
+  color: #2ecc71;
+  font-weight: bold;
+  }
+  .highlight-purple {
+  color: #9b59b6;
+  font-weight: bold;
+  }
+  .highlight-orange {
+  color: #e67e22;
+  font-weight: bold;
+  }
+
+  /* Status Colors */
+  .success {
+  color: #27ae60;
+  font-weight: bold;
+  }
+  .warning {
+  color: #f39c12;
+  font-weight: bold;
+  }
+  .error {
+  color: #c0392b;
+  font-weight: bold;
+  }
+  .info {
+  color: #2980b9;
+  font-weight: bold;
+  }
+  .neutral {
+  color: #7f8c8d;
+  font-weight: bold;
+  }
+
+  /* Background Highlights */
+  .bg-highlight {
+  background-color: #ffecdb;
+  padding: 2px 4px;
+  border-radius: 3px;
+  }
+  .bg-success {
+  background-color: #d5f5e3;
+  padding: 2px 4px;
+  border-radius: 3px;
+  }
+  .bg-warning {
+  background-color: #fef5e7;
+  padding: 2px 4px;
+  border-radius: 3px;
+  }
+  .bg-error {
+  background-color: #fadbd8;
+  padding: 2px 4px;
+  border-radius: 3px;
+  }
+  .bg-info {
+  background-color: #d6eaf8;
+  padding: 2px 4px;
+  border-radius: 3px;
+  }
+.chart-placeholder {
+  margin: 20px 0;
+  height: 300px;
+  background-color: #f8f9fa;
+  border: 1px dashed #95a5a6;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  color: #7f8c8d;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+}
+.center-table {
+  display: flex;
+  justify-content: center;
+}
+.center-table table {
+  width: 90%;  /* Or whatever width you prefer */
+}
+th {
+  background-color:rgb(0, 52, 87);
+  color: white;
+}
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.small-text {
+  font-size: 0.8em;
+}
