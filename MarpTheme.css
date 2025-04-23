@@ -34,6 +34,31 @@ h2 {
   gap: 20px;
 }
 
+/* Adjust list sizing in columns for better fit */
+.columns ul li, .columns ol li {
+  font-size: 0.9em;
+  margin-bottom: 0.4em; /* Reduce space between list items */
+}
+
+.columns ul, .columns ol {
+  padding-left: 20px; /* Reduce indentation of lists */
+  margin-top: 0.5em; /* Reduce space above lists */
+  margin-bottom: 0.5em; /* Reduce space below lists */
+}
+
+/* Compact lists for slides with more content */
+.compact-list ul li, .compact-list ol li {
+  font-size: 0.85em;
+  margin-bottom: 0.3em;
+  line-height: 1.2;
+}
+
+.compact-list ul, .compact-list ol {
+  padding-left: 15px;
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+
 /* Chart placeholder for design mockups */
 .chart-placeholder {
   margin: 20px 0;
@@ -191,6 +216,136 @@ tr:nth-child(even) {
   padding: 2px 4px;
   border-radius: 3px;
 }
+
+/* ===== CONTENT-RICH SLIDES ===== */
+/* Layout for slides with more content */
+.content-rich h1 {
+  font-size: 1.6em;
+  margin-bottom: 0.3em;
+}
+
+.content-rich h2 {
+  font-size: 1.2em;
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+
+.content-rich ul li, .content-rich ol li {
+  font-size: 0.85em;
+  margin-bottom: 0.3em;
+}
+
+.content-rich .columns {
+  gap: 15px; /* Reduce space between columns */
+}
+
+/* ===== TEXT PILLS ===== */
+/* Pill-style text highlights for keywords, categories, etc. */
+.pill {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Default pill (gray) */
+.pill {
+  background-color: #f0f0f0;
+  color: #555;
+}
+
+/* Primary colors */
+.pill-blue {
+  background-color: #e1f0fa;
+  color: #1976d2;
+}
+
+.pill-green {
+  background-color: #e6f4ea;
+  color: #0d904f;
+}
+
+.pill-red {
+  background-color: #fdedeb;
+  color: #d32f2f;
+}
+
+.pill-yellow {
+  background-color: #fff8e1;
+  color: #f57f17;
+}
+
+.pill-purple {
+  background-color: #f1e9fc;
+  color: #7b1fa2;
+}
+
+/* Status pills */
+.pill-success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.pill-warning {
+  background-color: #fff8e1;
+  color: #ef6c00;
+}
+
+.pill-error {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.pill-info {
+  background-color: #e3f2fd;
+  color: #0277bd;
+}
+
+/* Filled pills (more vibrant) */
+.pill-filled {
+  color: white;
+}
+
+.pill-filled.pill-blue {
+  background-color: #2196f3;
+}
+
+.pill-filled.pill-green {
+  background-color: #4caf50;
+}
+
+.pill-filled.pill-red {
+  background-color: #f44336;
+}
+
+.pill-filled.pill-yellow {
+  background-color: #ffc107;
+  color: #333; /* Dark text for better contrast on yellow */
+}
+
+.pill-filled.pill-purple {
+  background-color: #9c27b0;
+}
+
+.pill-filled.pill-success {
+  background-color: #4caf50;
+}
+
+.pill-filled.pill-warning {
+  background-color: #ff9800;
+  color: #333; /* Dark text for better contrast on orange */
+}
+
+.pill-filled.pill-error {
+  background-color: #f44336;
+}
+
+.pill-filled.pill-info {
+  background-color: #2196f3;
+}
+
 
 /* ===== CUSTOM SLIDE LAYOUTS ===== */
 /* Add your custom slide layouts here as you develop them */
