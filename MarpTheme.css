@@ -1,25 +1,50 @@
 /**
-* Mario's Marp Theme
+* Mario's Marp Theme (University of Edinburgh variant)
 * A clean, professional theme for Marp presentations
-* https://github.com/Mario1502/Mario-Marp-theme
+* Customized to align with University of Edinburgh branding.
 */
+
+/* ===== BRAND TOKENS (Easily tweak here) ===== */
+:root {
+  /* Approximated University of Edinburgh palette — adjust to official hex if needed */
+  --uoe-navy: #003865;        /* Primary navy */
+  --uoe-navy-80: #2a577c;     /* Lighter navy for accents */
+  --uoe-red: #a31f34;         /* Crest red */
+  --uoe-slate: #2c3e50;       /* Slate for body text */
+  --uoe-grey-1: #e6ecf1;      /* Light border/bg */
+  --uoe-grey-2: #95a5a6;      /* Muted text/borders */
+  --uoe-link: #003865;        /* Link color */
+  --uoe-link-hover: #a31f34;  /* Link hover */
+}
 
 /* ===== BASE ELEMENTS ===== */
 section {
   font-family: 'Arial', sans-serif;
   padding: 40px;
+  border-top: 8px solid var(--uoe-navy);
 }
 
 /* Typography */
 h1 {
-  color: #2c3e50;
+  color: var(--uoe-navy);
   font-size: 2em;
-  border-bottom: 2px solid #3491db;
+  border-bottom: 3px solid var(--uoe-red);
   padding-bottom: 10px;
 }
 
 h2 {
-  color: rgb(60, 108, 143);
+  color: var(--uoe-navy-80);
+}
+
+a {
+  color: var(--uoe-link);
+  text-decoration: none;
+  border-bottom: 1px solid var(--uoe-link);
+}
+
+a:hover {
+  color: var(--uoe-link-hover);
+  border-bottom-color: var(--uoe-link-hover);
 }
 
 .small-text {
@@ -32,6 +57,10 @@ h2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+}
+
+.columns > div {
+  padding: 6px 0;
 }
 
 /* Adjust list sizing in columns for better fit */
@@ -64,7 +93,7 @@ h2 {
   margin: 20px 0;
   height: 300px;
   background-color: #f8f9fa;
-  border: 1px dashed #95a5a6;
+  border: 1px dashed var(--uoe-grey-2);
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -78,11 +107,17 @@ h2 {
 header {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  min-height: 40px;
 }
 
-header img {
+/* Optional: inject UoE logo before header text (requires header content in slide) */
+header::before {
+  content: "";
+  display: inline-block;
+  width: 140px;
   height: 40px;
+  background: url("../UniTemplatesAndLogos/UniversityOfEdinburghLogo.svg") left center/contain no-repeat;
 }
 
 /* Custom footer with logo */
@@ -91,15 +126,20 @@ footer {
   justify-content: space-between;
   align-items: center;
   gap: 20px;
+  color: var(--uoe-slate);
 }
 
 footer img {
-  height: 30px;
+  height: 28px;
 }
 
+/* Optional: show UoE logo at right of footer */
 footer::after {
-  content: url("path/to/small-logo.png");
-  height: 20px;
+  content: "";
+  display: inline-block;
+  width: 120px;
+  height: 28px;
+  background: url("../UniTemplatesAndLogos/UniversityOfEdinburghLogo.svg") right center/contain no-repeat;
 }
 
 /* ===== TABLES ===== */
@@ -120,8 +160,8 @@ table {
 }
 
 th {
-  background-color: rgb(0, 52, 87);
-  color: white;
+  background-color: var(--uoe-navy);
+  color: #fff;
 }
 
 td, th {
@@ -141,7 +181,7 @@ tr:nth-child(even) {
 }
 
 .highlight-blue {
-  color: #3498db;
+  color: var(--uoe-navy);
   font-weight: bold;
 }
 
@@ -177,7 +217,7 @@ tr:nth-child(even) {
 }
 
 .info {
-  color: #2980b9;
+  color: var(--uoe-navy);
   font-weight: bold;
 }
 
@@ -218,6 +258,51 @@ tr:nth-child(even) {
 }
 
 /* ===== CONTENT-RICH SLIDES ===== */
+
+/* Code blocks and inline code */
+pre, code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+pre code {
+  display: block;
+  padding: 12px;
+  background: #f6f8fa;
+  border: 1px solid var(--uoe-grey-1);
+  border-radius: 6px;
+}
+
+code:not(pre code) {
+  background: #f6f8fa;
+  padding: 1px 4px;
+  border-radius: 3px;
+  border: 1px solid var(--uoe-grey-1);
+}
+
+/* Pills (labels / tags) tuned to palette */
+.pill {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--uoe-navy);
+  color: var(--uoe-navy);
+  font-size: 0.85em;
+}
+
+.pill.pill-blue { border-color: var(--uoe-navy); color: var(--uoe-navy); }
+.pill.pill-green { border-color: #2e7d32; color: #2e7d32; }
+.pill.pill-red { border-color: var(--uoe-red); color: var(--uoe-red); }
+.pill.pill-yellow { border-color: #b8860b; color: #b8860b; }
+.pill.pill-purple { border-color: #6a1b9a; color: #6a1b9a; }
+.pill.pill-info { border-color: var(--uoe-navy-80); color: var(--uoe-navy-80); }
+
+.pill.pill-filled { color: #fff; }
+.pill.pill-filled.pill-blue { background: var(--uoe-navy); border-color: var(--uoe-navy); }
+.pill.pill-filled.pill-green { background: #2e7d32; border-color: #2e7d32; }
+.pill.pill-filled.pill-red { background: var(--uoe-red); border-color: var(--uoe-red); }
+.pill.pill-filled.pill-yellow { background: #b8860b; border-color: #b8860b; }
+.pill.pill-filled.pill-purple { background: #6a1b9a; border-color: #6a1b9a; }
+.pill.pill-filled.pill-info { background: var(--uoe-navy-80); border-color: var(--uoe-navy-80); }
 /* Layout for slides with more content */
 .content-rich h1 {
   font-size: 1.6em;
@@ -358,4 +443,3 @@ tr:nth-child(even) {
   align-items: center;
 }
 */
-
